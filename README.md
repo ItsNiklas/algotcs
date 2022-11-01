@@ -1,5 +1,5 @@
-# algotcs, Algorithms by Theoretical Computer Science Group 👨🏼‍🎓
-Solutions created during the 2022 practical 'Algorithms for Programming Contests' using Python 3.10.
+# algotcs
+My solutions created during the practical 'Algorithms for Programming Contests' in Winter 2022 using Python 3.10. 🐍
 
 Contents:
 - Introduction
