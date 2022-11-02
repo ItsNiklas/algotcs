@@ -3,7 +3,7 @@ def main() -> None:
     input = [int(x) for x in open(0)]
                 
     # Execute function on every line after the first.
-    # Described behaviour is quivalent to quadratic growth.
+    # Described behaviour is equivalent to quadratic growth.
     # Pretty print.
     print(*[(x+1)**2 for x in input[1:]], sep = '\n')
 
