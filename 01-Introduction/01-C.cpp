@@ -8,9 +8,8 @@ int main() {
     // Loop over buoys.
     for (int i = 1; i <= buoys; i++) {
         std::cin >> height;
-        if (height < flood) {
-             std::cout << i << " ";
-        }
+        if (height < flood)
+            std::cout << i << " ";
     }
     std::cout << std::endl;
     return 0;
