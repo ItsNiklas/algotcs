@@ -1,17 +1,13 @@
 #include <iostream>
+#include <string>
 
 int main() {
-    int d = 0;
-    char c;
+    std::string a, b;
 
-    // Calculating difference of a's.
-    // Switches to doctor after 'h'.
-    while (std::cin >> c) {
-        d += c == 'a';
-        if (c == 'h') d *= -1;
-    }
+    std::getline(std::cin, a);
+    std::getline(std::cin, b);
     
     // Print to stdout.
-    std::cout << (d >= 0 ? "go" : "no") << std::endl;
+    std::cout << (a.length() >= b.length() ? "go" : "no") << std::endl;
     return 0;
 }
