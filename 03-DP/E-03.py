@@ -7,10 +7,10 @@ def main() -> None:
     N, M, _, H = input[0]
 
     # Initialize two grids.
-    # One will store the cumulative damage of all towers accessing the field.
+    # One will store the cumulative damage to all towers accessing the field.
     # The other is our dp cache.
-    dmg_grid = [[0]*N for i in range(M)]
-    dp_grid  = [[0]*N for i in range(M)]
+    dmg_grid = [[0] * N for _ in range(M)]
+    dp_grid  = [[0] * N for _ in range(M)]
 
     # Calculate all tower damage,
     # adding their damage to each field in their radius and inbounds.
@@ -36,7 +36,7 @@ def main() -> None:
             prev = dp_grid[i_row][i_col] - dmg_grid[i_row][i_col]
             dp_grid[i_row][i_col] = min(down, prev) + dmg_grid[i_row][i_col]
 
-    # Run though left column to find minimal damage possible,
+    # Run through left column to find minimal damage possible,
     # return 0 if dead.
     print(max(H - min([row[0] for row in dp_grid]), 0))
 

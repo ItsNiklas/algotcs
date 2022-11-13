@@ -19,7 +19,7 @@ def main() -> None:
         return prev + (input[i] == "\"" if prev != -1 else 0)
 
     # Build cache
-    for i in range(len(input)): dp(i)
+    for k in range(len(input)): dp(k)
         
     print(dp(len(input) - 1))
 

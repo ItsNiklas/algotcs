@@ -27,7 +27,7 @@ def main() -> None:
         return min([1 + dp(m - p) for p in pyramids if m - p >= 0], default = 0)
 
     # Fill cache
-    for m in range(1, max(input)): dp(m)
+    for i in range(1, max(input)): dp(i)
         
     # Pretty print results.
     print(*[dp(m) for m in input], sep = '\n')

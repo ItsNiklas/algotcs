@@ -12,7 +12,7 @@ def main() -> None:
             # Write into cache.
             mountain[level_id][slope_id] += max(a, b)
 
-    # Get maximum score at the the lowest level.
+    # Get maximum score at the lowest level.
     print(max(mountain[-1]))
 
     
