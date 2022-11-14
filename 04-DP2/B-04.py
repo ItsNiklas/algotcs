@@ -4,6 +4,7 @@ def main() -> None:
     N = len(input); C = 3001
 
     # DP cache, one for each row in the parking lot.
+    # This is similar to the Knapsack problem.
     dp_narrow = [[0] * C for _ in range(N+1)]
     dp_wide   = [[0] * C for _ in range(N+1)]
 
