@@ -5,8 +5,8 @@ def main() -> None:
     N = len(input)
 
     # Two different alternating sequences possible.
-    dp = [1 for _ in range(N)]
-    dq = [1 for _ in range(N)]
+    dp = [1] * N
+    dq = [1] * N
 
     # Longest Alternating Subsequence by template.
     for i in range(N):
