@@ -1,6 +1,3 @@
-from collections import deque
-
-
 def main() -> None:
     # Read from stdin.
     input = [map(int, x.split()) for x in open(0)]
