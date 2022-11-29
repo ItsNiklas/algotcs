@@ -1,6 +1,6 @@
 # algotcs
 My solutions created during the practical 'Algorithms for Programming Contests'
-in Winter 2022 using Python 3.5 🐍 or C++ 20 👨🏼‍💻.
+in Winter 2022 using Python 3.5 🐍 or C++ 14 👨🏼‍💻.
 
 Contents:
 1. Introduction
