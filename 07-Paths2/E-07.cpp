@@ -1,29 +1,27 @@
-#include <iostream>
-#include <cstdio>
-#include <vector>
 #include <algorithm>
 #include <cmath>
+#include <cstdio>
+#include <iostream>
+#include <vector>
 
-using namespace std;
-
-// Struct to represent a city with its coordinates
+// Struct to represent a city with its coordinates.
 struct City {
     int x, y;
 };
 
-// Struct to represent an edge between two cities
+// Struct to represent an edge between two cities.
 struct Edge {
     int u, v;
     double w;
 };
 
 // Union-find data structure to keep track of connected components
-// and check whether two cities are already connected
+// and check whether two cities are already connected.
 class UnionFind {
-    vector<int> parent, rank;
+    std::vector<int> parent, rank;
 
-public:
-    UnionFind(int n) {
+  public:
+    explicit UnionFind(int n) {
         parent.resize(n);
         rank.resize(n);
         for (int i = 0; i < n; i++) {
@@ -38,7 +36,7 @@ public:
         return parent[u];
     }
 
-    void unite(int u, int v) {
+    void merge(int u, int v) {
         int p = find(u);
         int q = find(v);
         if (p == q)
@@ -53,23 +51,21 @@ public:
         }
     }
 
-    bool connected(int u, int v) {
-        return find(u) == find(v);
-    }
+    bool connected(int u, int v) { return find(u) == find(v); }
 };
 
 int main() {
     int n;
-    cin >> n;
+    std::cin >> n;
 
-    vector<City> cities(n);
+    std::vector<City> cities(n);
     for (int i = 0; i < n; i++)
-        cin >> cities[i].x >> cities[i].y;
+        std::cin >> cities[i].x >> cities[i].y;
 
-    vector<Edge> edges;
+    std::vector<Edge> edges;
 
     // Calculate the distances between all pairs of cities
-    // and add them to the list of edges
+    // and add them to the list of edges.
     for (int i = 0; i < n; i++) {
         for (int j = i + 1; j < n; j++) {
             double dx = cities[i].x - cities[j].x;
@@ -80,10 +76,9 @@ int main() {
         }
     }
 
-    // Sort the edges in ascending order of their weight
-    sort(edges.begin(), edges.end(), [](const Edge &a, const Edge &b) {
-        return a.w < b.w;
-    });
+    // Sort the edges in ascending order of their weight.
+    sort(edges.begin(), edges.end(),
+         [](const Edge &a, const Edge &b) { return a.w < b.w; });
 
     UnionFind uf(n);
     double min_total_length = 0;
@@ -93,14 +88,13 @@ int main() {
     // update the total length of the roads.
     for (const Edge &e : edges) {
         if (!uf.connected(e.u, e.v)) {
-            uf.unite(e.u, e.v);
+            uf.merge(e.u, e.v);
             min_total_length += e.w;
         }
     }
 
-    // Print the minimum total length of the roads
+    // Print the minimum total length of the roads.
     printf("%.7f\n", min_total_length);
 
     return 0;
-
 }

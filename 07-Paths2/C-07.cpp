@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <iostream>
 
 // n is the number of junctions
 // m is the number of roads
@@ -29,7 +29,8 @@ int main() {
     std::cin >> n >> m;
 
     // Initialize the disjoint set
-    for (int i = 1; i <= n; i++) fa[i] = i;
+    for (int i = 1; i <= n; i++)
+        fa[i] = i;
 
     // For each road, check if it connects two different
     // connected components. If it does, merge the two
@@ -49,23 +50,24 @@ int main() {
         // of one of the sets as the parent of the other.
         if (u != v) {
             fa[u] = v;
-
-            // Mark the road as non-horrible
+            // Mark the road as non-horrible.
             val[i] = 1;
         }
     }
 
-    // Count the number of non-horrible roads
+    // Count the number of non-horrible roads.
     int num_non_horrible_roads = 0;
     for (int i = 1; i <= m; i++)
-        if (val[i]) num_non_horrible_roads++;
+        if (val[i])
+            num_non_horrible_roads++;
 
-    // Print the number of non-horrible roads
+    // Print the number of non-horrible roads.
     std::cout << num_non_horrible_roads << std::endl;
 
-    // Print the indices of the non-horrible roads
+    // Print the indices of the non-horrible roads.
     for (int i = 1; i <= m; i++)
-        if (val[i]) std::cout << i << " ";
+        if (val[i])
+            std::cout << i << " ";
     std::cout << std::endl;
     return 0;
 }
