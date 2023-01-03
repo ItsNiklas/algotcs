@@ -12,8 +12,9 @@ Contents:
 7. Graph Data Structures
 8. DP on Graphs
 9. Game Theory
-10. Range Query Data Structures
-11. Geometry
-12. Number Theory
-13. String Algorithms
-14. Fixed length paths
+10. Christmas Special
+11. Range Query Data Structures
+12. Geometry
+13. Number Theory
+14. String Algorithms
+15. Fixed length paths
