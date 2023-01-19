@@ -25,7 +25,7 @@ def intersect_lines(Ad: complex, As: complex, Bd: complex, Bs: complex):
             return Bs
         return False
     # Intersection point
-    return Bs + cross(Ad, As - Bs) / cross(Ad, Bd) + Bd
+    return Bs + cross(Ad, As - Bs) / cross(Ad, Bd) * Bd
 
 
 def intersect_segments(Ad: complex, As: complex, Bd: complex, Bs: complex):
