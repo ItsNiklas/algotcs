@@ -16,4 +16,3 @@ Contents:
 11. Geometry
 12. Number Theory
 13. String Algorithms
-14. Fixed length paths
